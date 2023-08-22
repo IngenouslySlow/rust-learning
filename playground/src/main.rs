@@ -1,14 +1,20 @@
 /*---------------------------- NOTES ---------------- */
-// Create new project using -- cargo new project-name
-// Install a dependecy using -- cargo add dependency-name (ex: cargo add tokio)
-// To use all features of a dependency -- cargo add dependency-name --features full
-// Use inbuild rust formatter using -- cargo fmt
-// Build the project using -- cargo build
-// Run project using -- cargo run (builds and runs at the same time)
-/*  cargo build adds a folder called target to the root directory and creates a binary file with your project
-name which you can run using ./project-name */
-/* You can run the binary ahead of the time by using -- cargo build --release */
+/*Create  a function */
+/* Every variable in rust is by default immutable */
+/* To make it mutable you need to explicitly declare it as a mutable variable ex: let mut x: u32 = 50; */
+
+fn add_five(num: u32) -> u32 {
+    num + 5 // If we don't write return and don't put a semi-colon rust will return the line by default
+}
 
 fn main() {
-    println!("Hello, world!");
+    let mut x: u32 = 50;
+    println!("x is {}", x);
+
+    let y: u32 = add_five(x);
+    println!("y is {}", y);
+
+    // As we declared explicitly as a mutable variable, we can change x as follows
+    x = 70;
+    println!("x is now {}", x);
 }
