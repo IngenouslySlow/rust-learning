@@ -11,5 +11,4 @@ name which you can run using ./project-name */
 
 fn main() {
     println!("Hello, world!");
-    println!("Hello there");
 }
