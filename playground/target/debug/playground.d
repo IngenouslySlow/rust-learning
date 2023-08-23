@@ -1,1 +1,1 @@
-/Users/sunny/Desktop/Docs/Learn/rust-learning/playground/target/debug/playground: /Users/sunny/Desktop/Docs/Learn/rust-learning/playground/src/main.rs
+/Users/sunny/Desktop/Docs/Learn/rust-learning/playground/target/debug/playground: /Users/sunny/Desktop/Docs/Learn/rust-learning/playground/src/funcs.rs /Users/sunny/Desktop/Docs/Learn/rust-learning/playground/src/main.rs /Users/sunny/Desktop/Docs/Learn/rust-learning/playground/src/other_funcs/minus.rs /Users/sunny/Desktop/Docs/Learn/rust-learning/playground/src/other_funcs/mod.rs
