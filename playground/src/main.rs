@@ -5,6 +5,7 @@
 // /** Multiline block */
 // Once done use -- cargo doc to create the docs
 // To open docs in the browser use -- cargo doc --open
+// See Crates.io to find all rust libraries
 
 mod funcs;
 mod other_funcs;
