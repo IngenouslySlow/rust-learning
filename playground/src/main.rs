@@ -1,25 +1,19 @@
 /*---------------------------- NOTES ---------------- */
-// Docs in Rust with Cargo
-// You can create docs in rust by using ///
-// # Heading
-// /** Multiline block */
-// Once done use -- cargo doc to create the docs
-// To open docs in the browser use -- cargo doc --open
-// See Crates.io to find all rust libraries
+// There are two ways to remove squiggly lines for the functions or variables that are unused
 
-mod funcs;
-mod other_funcs;
-
-use crate::funcs::{add_five, other_func};
-use crate::other_funcs::minus::minus_five;
-
-fn main() {
-    let x = add_five(5);
-    println!("x: {}", x);
-
-    let print_random = other_func();
-    println!("{:?}", print_random);
-
-    let y = minus_five(10);
-    println!("y: {}", y);
+// Procedure 1 - Add an underscore
+fn _add_five(num: u32) -> u32 {
+    let _x = 5;
+    let _y = 10;
+    num + 5
 }
+
+// Procedure 2 - Use macros and allow them
+#[allow(dead_code, unused_variables)]
+fn minus_five(num: u32) -> u32 {
+    let x = 5;
+    let y = 10;
+    num + 5
+}
+
+fn main() {}
