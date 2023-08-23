@@ -1,7 +1,10 @@
 /*---------------------------- NOTES ---------------- */
-/* Unit Testing with Rust */
-
-/* See  funcs.rs and other_functs/minus.rs to see how to add testing*/
+// Docs in Rust with Cargo
+// You can create docs in rust by using ///
+// # Heading
+// /** Multiline block */
+// Once done use -- cargo doc to create the docs
+// To open docs in the browser use -- cargo doc --open
 
 mod funcs;
 mod other_funcs;

@@ -1,3 +1,14 @@
+/// Docs in Rust with Cargo
+/// # This is a block
+/// You can create a block like this with Rust
+/// # Add function
+/// ``` let x = add_five(5);
+/// ``` let y = minus_five(10);
+
+/**
+ * This is a multiline block
+ */
+
 pub fn add_five(num: i32) -> i32 {
     num + 5
 }
