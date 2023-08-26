@@ -1,19 +1,33 @@
-/*---------------------------- NOTES ---------------- */
-// There are two ways to remove squiggly lines for the functions or variables that are unused
+const PLAYERS: u8 = 11; // Can't be mutable and global (available everywhere)
 
-// Procedure 1 - Add an underscore
-fn _add_five(num: u32) -> u32 {
-    let _x = 5;
-    let _y = 10;
-    num + 5
+fn main() {
+    // Stack
+    let x: u8 = 18;
+    println!("Value of x is: {}", x);
+
+    // Vector - Heap
+    let vec: Vec<u32> = vec![1, 2, 3, 4, 5];
+    println!("Value of vec is: {:?}", vec);
+
+    // Mutable Vector - Heap
+    let mut vec_2: Vec<u32> = vec![1, 2, 3, 4, 5];
+    vec_2.push(6);
+    println!("Value of vec_2 is: {:?}", vec_2);
+
+    // String - Heap
+    let str: String = String::from("Bruce Wayne");
+    println!("Value of str is: {:?}", str);
+
+    // Mutable String - Heap
+    let mut str_2: String = String::from("Bruce Wayne");
+    str_2.push(' ');
+    str_2.push('🦇');
+    println!("Value of str_2 is: {:?}", str_2);
+
+    // Reference string - Stack pointing the address
+    let str_3 = &str_2[0..5];
+    println!("Value of str_3 is: {:?}", str_3);
+
+    // Const
+    println!("No. of players are: {}", PLAYERS);
 }
-
-// Procedure 2 - Use macros and allow them
-#[allow(dead_code, unused_variables)]
-fn minus_five(num: u32) -> u32 {
-    let x = 5;
-    let y = 10;
-    num + 5
-}
-
-fn main() {}
