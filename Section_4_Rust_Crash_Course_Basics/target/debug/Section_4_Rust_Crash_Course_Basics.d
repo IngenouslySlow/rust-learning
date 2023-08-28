@@ -1,0 +1,1 @@
+/Users/sunny/Desktop/Docs/Learn/rust-learning/Section_4_Rust_Crash_Course_Basics/target/debug/Section_4_Rust_Crash_Course_Basics: /Users/sunny/Desktop/Docs/Learn/rust-learning/Section_4_Rust_Crash_Course_Basics/src/main.rs
