@@ -1,14 +1,16 @@
 #[derive(Debug)]
-enum GuessTheCity<T, E> {
-    Ok(T),
-    Err(E),
+
+// ------- Option Enum with Some or None --------
+enum BatmanCannotBeDefeated<T> {
+    None,
+    Some(T),
 }
 
-fn city_guesser(name: String) -> GuessTheCity<String, String> {
-    if name == "Batman" {
-        GuessTheCity::Ok("Gotham City".to_string())
+fn can_anyone_defeat_batman(answer: String) -> BatmanCannotBeDefeated<String> {
+    if answer == "Yes" {
+        BatmanCannotBeDefeated::Some("Cannot be defeated".to_string())
     } else {
-        GuessTheCity::Err("Metropolis".to_string())
+        BatmanCannotBeDefeated::None
     }
 }
 
@@ -18,9 +20,11 @@ mod test {
 
     #[test]
     fn tests_enums() {
-        let batman_city: GuessTheCity<String, String> = city_guesser("Batman".to_string());
-        let superman_city: GuessTheCity<String, String> = city_guesser("Superman".to_string());
-        dbg!(batman_city);
-        dbg!(superman_city);
+        let not_defeated: BatmanCannotBeDefeated<String> =
+            can_anyone_defeat_batman("Yes".to_string());
+        let defeated: BatmanCannotBeDefeated<String> = can_anyone_defeat_batman("No".to_string());
+
+        println!("{:?}", not_defeated);
+        println!("{:?}", defeated);
     }
 }
