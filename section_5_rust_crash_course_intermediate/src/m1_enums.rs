@@ -1,13 +1,15 @@
 #[derive(Debug)]
-enum CarColors {
-    Red,
-    Blue,
-    Black,
-    Silver,
+enum GuessTheCity<T, E> {
+    Ok(T),
+    Err(E),
 }
 
-fn select_car_color() -> CarColors {
-    CarColors::Black
+fn city_guesser(name: String) -> GuessTheCity<String, String> {
+    if name == "Batman" {
+        GuessTheCity::Ok("Gotham City".to_string())
+    } else {
+        GuessTheCity::Err("Metropolis".to_string())
+    }
 }
 
 #[cfg(test)]
@@ -16,7 +18,9 @@ mod test {
 
     #[test]
     fn tests_enums() {
-        let car_color: CarColors = select_car_color();
-        dbg!(car_color);
+        let batman_city: GuessTheCity<String, String> = city_guesser("Batman".to_string());
+        let superman_city: GuessTheCity<String, String> = city_guesser("Superman".to_string());
+        dbg!(batman_city);
+        dbg!(superman_city);
     }
 }
