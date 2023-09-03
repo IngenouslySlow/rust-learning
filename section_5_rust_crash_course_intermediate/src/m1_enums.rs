@@ -1,30 +1,47 @@
-#[derive(Debug)]
+// ------- Result and Option -- Same thing we've implemented before--------
 
-// ------- Option Enum with Some or None --------
-enum BatmanCannotBeDefeated<T> {
-    None,
-    Some(T),
+// Result
+fn city(name: String) -> Result<String, String> {
+    if name == "Gotham" {
+        Result::Ok("I'm batman".to_string())
+        // Or you can also do this as this is built-in
+        // Ok("I'm batman".to_string())
+    } else {
+        Result::Err("I'm Superman".to_string())
+        // Or you can also do this as this is built-in
+        // Err("I'm Superman".to_string())
+    }
 }
 
-fn can_anyone_defeat_batman(answer: String) -> BatmanCannotBeDefeated<String> {
-    if answer == "Yes" {
-        BatmanCannotBeDefeated::Some("Cannot be defeated".to_string())
+// Option
+fn bat_signal(crime: bool) -> Option<String> {
+    if crime == true {
+        Option::Some("Batman's here".to_string())
+        // Or you can also do this as this is built-in
+        // Some("Batman's here");
     } else {
-        BatmanCannotBeDefeated::None
+        Option::None
+        // Or you can also do this as this is built-in
+        // None
     }
 }
 
 #[cfg(test)]
 mod test {
+    use std::string;
+
     use super::*;
 
     #[test]
     fn tests_enums() {
-        let not_defeated: BatmanCannotBeDefeated<String> =
-            can_anyone_defeat_batman("Yes".to_string());
-        let defeated: BatmanCannotBeDefeated<String> = can_anyone_defeat_batman("No".to_string());
+        let batman: Result<String, String> = city("Gotham".to_string());
+        let superman: Result<String, String> = city("Metropolis".to_string());
+        dbg!(batman);
+        dbg!(superman);
 
-        println!("{:?}", not_defeated);
-        println!("{:?}", defeated);
+        let bat_signal_on: Option<String> = bat_signal(true);
+        let bat_signal_off: Option<String> = bat_signal(false);
+        dbg!(bat_signal_on);
+        dbg!(bat_signal_off);
     }
 }
